@@ -18,7 +18,7 @@ sudo sed -i -e "s/#listen_addresses = 'localhost'/listen_addresses = '*'/" /etc/
 
 # Edit the /etc/postgresql/9.6/main/pg_hba.conf inorder to allow the IP that can connect to it
 # find the 127.0.0.1/32 and change it to the IP range that can connect to the database
-sudo sed -i -e "s/127.0.0.1\/32/0.0.0.0\/0/" /etc/postgresql/9.6/main/pg_hba.conf
+sudo sed -i -e "s/127.0.0.1\/32/10.0.0.0\/24/" /etc/postgresql/9.6/main/pg_hba.conf
 
 # Restart the postgres server
 sudo systemctl restart postgresql
