@@ -71,7 +71,7 @@ resource "google_compute_firewall" "inbound_http" {
   network       = "${google_compute_network.database-vpc.self_link}"
   allow {
     protocol    = "tcp"
-    ports       = ["80", "8080"]
+    ports       = ["80", "8080", "5000", "7000"]
   }
 
   source_ranges = ["0.0.0.0/0"]

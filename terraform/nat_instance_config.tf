@@ -17,7 +17,7 @@ resource "google_compute_instance" "nat_instance" {
     }
   }
   can_ip_forward = "true"
-  tags = ["public"]
+  tags = ["public", "http-server"]
   service_account {
     scopes = ["cloud-platform"]
   }

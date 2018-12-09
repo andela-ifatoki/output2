@@ -12,7 +12,7 @@ sudo apt-get install -y postgresql-9.6
 # Edit the postgres configuration file
 # echo "listen_addresses = '*'" | sudo tee -a /etc/postgresql/9.6/main/postgresql.conf
 
-sudo sed -i -e "s/listen_addresses = 'localhost'/listen_addresses = '*'/" /etc/postgresql/9.6/main/postgresql.conf
+sudo sed -i -e "s/#listen_addresses = 'localhost'/listen_addresses = '*'/" /etc/postgresql/9.6/main/postgresql.conf
 
 # Edit the /etc/postgresql/9.6/main/pg_hba.conf inorder to allow the IP that can connect to it
 # find the 127.0.0.1/32 and change it to the IP range that can connect to the database
@@ -60,5 +60,5 @@ ls /var/lib/postgresql/9.6/archive/
 
 ## To create a database on master
 # sudo su postgres
-# psql -c 'CREATE DATABASE test1'
+# psql -c 'create database test1'
 # \l
