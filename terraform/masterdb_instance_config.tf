@@ -3,6 +3,7 @@ resource "google_compute_instance" "masterdb_instance" {
   name         = "masterdb"
   machine_type = "${var.machine_type}"
   zone         = "${var.zone}"
+  metadata_startup_script = "${var.startup_scripts["masterdb"]}"
   tags         = ["private"]
   boot_disk {
     initialize_params {

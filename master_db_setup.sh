@@ -43,7 +43,7 @@ sudo chown postgres.postgres /var/lib/postgresql/9.6/archive/
 
 
 # create replication user in /etc/postgresql/9.6/main/pg_hba.conf
-sudo sed -i -e "s/#host    replication     postgres        0.0.0.0\/0            md5/host    replication     replication        0.0.0.0\/0            md5/" /etc/postgresql/9.6/main/pg_hba.conf
+sudo sed -i -e "s/#host replication postgres/host replication replication/" /etc/postgresql/9.6/main/pg_hba.conf
 
 # Restart the postgres 
 sudo systemctl start postgresql
@@ -61,3 +61,4 @@ ls /var/lib/postgresql/9.6/archive/
 # sudo su postgres
 # psql -c 'create database test1'
 # \l
+
