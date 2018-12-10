@@ -1,5 +1,5 @@
 .terraform
-**main.tf
+main.tf
 **variables.tf
 **terraform.tfstate
 **terraform.tfstate.backup
